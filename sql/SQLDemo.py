@@ -12,4 +12,6 @@ emp=spark.read.option('header',True).schema(empSchema).csv('data/emp/emp.csv')
 #create temporary view
 emp.createOrReplaceTempView("employee")
 #run queries
+spark.sql('show databases').show()
+spark.sql('show tables').show()
 spark.sql('select * from employee').show()
