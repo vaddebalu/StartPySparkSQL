@@ -1,7 +1,7 @@
 """
-Sample pyspark program that applies a filter on a dataset
+This pyspark program explains how to select few columns from  the existing data set.
 """
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 emp=spark.read.option('header',True).csv('data/emp/emp.csv')
-emp.filter(emp['dno']>12).show()
+emp.select(emp['ename'],emp['eno']).show()
